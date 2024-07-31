@@ -5,11 +5,24 @@ export default function AddChemical(props) {
 
     const [txtName, setTxtName] = useState("")
     const [txtCT, setTxtCT] = useState("")
+    console.log(txtName)
+    console.log(txtCT)
     const { handle_add } = props
 
     return (
         <>
-            <Label >
+            <h1>Form add</h1>
+            <Input value={txtName} placeholder='Ten chat hoa hoc' onChange={(e) => setTxtName(e.target.value)} />
+            <Input value={txtCT} placeholder='CT Hoa Hoc toi yeu' onChange={(e) => setTxtCT(e.target.value)} />
+            <Button color='primary' onClick={() => (
+                handle_add(txtName, txtCT),
+                setTxtCT(""),
+                setTxtName("")
+            )
+            }>add</Button >
+
+
+            {/* <Label >
                 Name:
             </Label>
             <Input
@@ -29,7 +42,7 @@ export default function AddChemical(props) {
             />
             <Button color="primary" onClick={handle_add(txtName, txtCT)}>
                 Do Something
-            </Button>
+            </Button> */}
 
         </>
     )

@@ -1,9 +1,13 @@
-import React from 'react'
-import { Button } from 'reactstrap'
+import React, { useState } from 'react'
+import { Button, Input } from 'reactstrap'
 
 export default function ChemicalItem(props) {
 
-    const { item, index, handle_delte } = props
+    const { item, index, handle_delte, handle_find } = props
+    const [isEdit, setIsEdit] = useState({ id: "", flag: false })
+    const [nameEdit, setNameEdit] = useState("")
+    const [ctEdit, setCtEdit] = useState("")
+
     return (
         <>
             {
@@ -21,7 +25,7 @@ export default function ChemicalItem(props) {
                         <Button onClick={() => handle_delte(item.id)} color='danger'>X</Button>
                     </td>
                     <td>
-                        <Button color='success'>Edit</Button>
+                        <Button onClick={() => handle_find(item.id)} color='success'>Edit</Button>
                     </td>
                 </tr>
             }

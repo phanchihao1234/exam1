@@ -4,7 +4,7 @@ import chemicalSlice from "./chemicalSlice"
 
 const store = configureStore({
     reducer: {
-        chemical: chemicalSlice,
+        chemicals: chemicalSlice,
     }
 })
 
